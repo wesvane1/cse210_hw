@@ -11,23 +11,28 @@ class Program
 
         if (grade >= 90)
         {
-            Console.WriteLine("You got an A in this class! You passed!");
+            string letter= "A";
+            Console.WriteLine($"You got an {letter} in this class! You passed!");
         }
         else if (grade >= 80)
         {
-            Console.WriteLine("You got an B in this class! You passed!");
+            string letter= "B";
+            Console.WriteLine($"You got an {letter} in this class! You passed!");
         }
         else if (grade >= 70)
         {
-            Console.WriteLine("You got an C in this class! You passed!");
+            string letter= "C";
+            Console.WriteLine($"You got an {letter} in this class! You passed!");
         }
         else if (grade >= 60)
         {
-            Console.WriteLine("You got an D in this class. You may want to consider retaking the course");
+            string letter= "D";
+            Console.WriteLine($"You got an {letter} in this class. You may want to consider retaking the course");
         }
         else
         {
-            Console.WriteLine("You got an F in this class. You may want to consider retaking the course");
+            string letter= "F";
+            Console.WriteLine($"You got an {letter} in this class. You may want to consider retaking the course");
         }
     }
 }
