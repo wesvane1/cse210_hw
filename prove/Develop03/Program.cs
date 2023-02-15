@@ -23,6 +23,7 @@ class Program
       {
         Console.Clear();
         Console.WriteLine(scrip);
+        Console.WriteLine($"{ref1.getRef1()} {words.randomWord(words.getWords())}");
       }
       else
       {
@@ -30,4 +31,8 @@ class Program
         Console.WriteLine("This is the end of the line buck-o");
       }
     }
+
+    // Set a value equal to zero.
+    // Set a bool value to be false for each word in the scripture.
+    // The bool becomes true when it has iterated through each word in the scripture.
 }

@@ -55,7 +55,7 @@ class Referenceeeee
   private string _chapter;
   private string _startVerse;
   private string _endVerse;
-  public Reference(string book, string chapter, string startVerse, string endVerse)
+  public Referenceeeee(string book, string chapter, string startVerse, string endVerse)
   {
     _book = book;
     _chapter = chapter;
@@ -63,7 +63,7 @@ class Referenceeeee
     _endVerse = endVerse;
     Console.WriteLine($"{_book} {_chapter}:{_startVerse}{endVerse}");
   }
-    public Reference(string book, string chapter, string startVerse)
+    public Referenceeeee(string book, string chapter, string startVerse)
   {
     _book = book;
     _chapter = chapter;
@@ -86,7 +86,7 @@ class Scriptureeeee
   private string _scripture;
   // private string _scripture2;
 
-  public Scripture(Reference reference, string scripture){
+  public Scriptureeeee(Referenceeeee reference, string scripture){
     _scripture = scripture;
     Console.WriteLine($"{reference.Get1()} {scripture}");
   }
