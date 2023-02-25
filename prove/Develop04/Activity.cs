@@ -24,10 +24,11 @@ public class Activity
     _welcome = welcome;
     _congrats = congrats;
   }
-  public static void menu(Breathing breath, Listing list, Reflection reflect)
+  public void menu(Breathing breath, Listing list, Reflection reflect)
   {
     Console.WriteLine("Welcome to the Mindfulness Program\nWhat would you like to do?");
     Console.WriteLine("1: Breathing Activity\n2: Listing Activity\n3: Reflection Activity");
+    Console.WriteLine("Please select one of the following options: ");
     int selection = int.Parse(Console.ReadLine());
     if (selection == 1)
     {

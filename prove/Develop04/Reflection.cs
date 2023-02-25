@@ -1,5 +1,6 @@
 public class Reflection : Activity
 {
+  private string _description;
   private List<string> reflectionList = new List<string>()
   {
   "What makes you feel powerful?",
@@ -41,18 +42,44 @@ public class Reflection : Activity
     "How did that experience change you for better or worse?",
     "Why do you feel that you needed the experience?"
   };
-  public Reflection(string welcome, string congrats) : base(welcome, congrats)
+  public Reflection(string description, string welcome, string congrats) : base(welcome, congrats)
   {
-
+    _description = description;
   }
+  private string setDescription(string description)
+  {
+    _description = description;
+    return description;
+  }
+
+  private string getDescription()
+  {
+    return $"{_description}";
+  }
+
+  private string setReflectEnd(string congrats)
+  {
+    _congrats = congrats;
+    return congrats;
+  }
+  private string getReflectEnd()
+  {
+    return $"{_congrats}";
+  }
+
   public bool CountDown (int seconds)
   {
+    Console.WriteLine($"{getDescription()}");
+    Console.WriteLine("Press any key to begin");
+    Console.ReadKey();
     Random randInt = new Random();
     int randomChoice = randInt.Next(0, reflectionList.Count);
     Console.WriteLine(reflectionList[randomChoice]);
+    Thread.Sleep(5000);
     bool stop = false;
     DateTime date = DateTime.Now;
     DateTime date2 = date.AddSeconds(seconds);
+    
     do{
       // The below line will write out the number of seconds that has elapsed
       seconds --;
@@ -76,7 +103,7 @@ public class Reflection : Activity
     }
     while (date < date2);
       stop = true;
-      Console.WriteLine(_congrats);
+      Console.WriteLine(getReflectEnd());
       return stop;
   }
 }

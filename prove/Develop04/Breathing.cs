@@ -1,31 +1,36 @@
 public class Breathing : Activity
 {
-  public Breathing(string welcome, string congrats) : base(welcome, congrats)
-  {
+  private string _description;
 
+  public Breathing(string description, string welcome, string congrats) : base(welcome, congrats)
+  {
+    _description = description;
   }
 
-  public string setBreathingActivityStart(string welcome)
+  private string setDescription(string description)
   {
-    _welcome  = welcome;
-    return welcome;
+    _description = description;
+    return description;
   }
-  public string getBreathingActivityStart()
+
+  private string getDescription()
   {
-    return $"{_welcome}";
+    return $"{_description}";
   }
-  public string seBreathingActivityEnd(string congrats)
+  public string seBreathEnd(string congrats)
   {
     _congrats  = congrats;
     return congrats;
   }
-  public string getBreathingActivityEnd()
+  public string getBreathEnd()
   {
     return $"{_congrats}";
   }
 
   public bool CountDown (int seconds)
   {
+    int i = 0;
+    Console.WriteLine($"{getDescription()}");
     Console.WriteLine("Press any key to begin");
     Console.ReadKey();
     Console.WriteLine("Breath In...");
@@ -35,22 +40,33 @@ public class Breathing : Activity
     do{
       // The below line will write out the number of seconds that has elapsed
       seconds --;
-      Thread.Sleep(1000);
       date = DateTime.Now;
       if (seconds == 30 || seconds == 22 || seconds == 14 || seconds == 6)
       {
         Console.Clear();
-        Console.WriteLine("Breath In...");
+        Console.Write("Breath In...");
+        for (i = 5; i > 0; i--)
+        {
+          Console.Write(i);
+          Thread.Sleep(1000);
+          Console.Write("\b \b");
+        }
       }
       else if (seconds == 26 || seconds == 18 || seconds ==10 || seconds == 2)
       {
         Console.Clear();        
-        Console.WriteLine("Breath Out...");
+        Console.Write("Breath Out...");
+        for (i = 5; i > 0; i--)
+        {
+          Console.Write(i);
+          Thread.Sleep(1000);
+          Console.Write("\b \b");
+        }
       }
     }
     while (date < date2);
       stop = true;
-      Console.WriteLine(_congrats);
+      Console.WriteLine(getBreathEnd());
       return stop;
   }
 }

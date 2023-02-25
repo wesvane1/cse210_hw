@@ -1,5 +1,6 @@
 public class Listing : Activity
 {
+  private string _description;
   private List<string> listingPrompts = new List<string>()
   {
     "What do you like most about yourself?",
@@ -8,30 +9,36 @@ public class Listing : Activity
     "Who do you think is the most supportive person in your life right now?",
     "When have you been able to feel the Holy Ghost this week?"
   };
-  public Listing(string welcome, string congrats): base(welcome, congrats)
+  public Listing(string description, string welcome, string congrats): base(welcome, congrats)
   {
+    _description = description;
+  }
+  private string setDescription(string description)
+  {
+    _description = description;
+    return description;
+  }
 
-  }
-  public string setListingActivityStart(string welcome)
+  private string getDescription()
   {
-    _welcome  = welcome;
-    return welcome;
+    return $"{_description}";
   }
-  public string getListingActivityStart()
-  {
-    return $"{_welcome}";
-  }
-  public string seListingActivityEnd(string congrats)
+
+  public string seListEnd(string congrats)
   {
     _congrats  = congrats;
     return congrats;
   }
-  public string getListingActivityEnd()
+  public string getListEnd()
   {
     return $"{_congrats}";
   }
   public bool CountDown (int seconds)
   {
+    Console.WriteLine(getDescription());
+    Console.WriteLine("Please reflect on the following statement");
+    Console.WriteLine("Press any key to begin");
+    Console.ReadKey();
     Random randInt = new Random();
     int randomChoice = randInt.Next(0, listingPrompts.Count);
     Console.WriteLine(listingPrompts[randomChoice]);
@@ -51,7 +58,7 @@ public class Listing : Activity
     }
     while (date < date2);
       stop = true;
-      Console.WriteLine(_congrats);
+      Console.WriteLine(getListEnd());
       return stop;
   }
 }
