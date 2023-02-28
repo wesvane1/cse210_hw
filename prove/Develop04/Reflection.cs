@@ -81,7 +81,6 @@ public class Reflection : Activity
     DateTime date2 = date.AddSeconds(seconds);
     
     do{
-      // The below line will write out the number of seconds that has elapsed
       seconds --;
       Thread.Sleep(1000);
       date = DateTime.Now;
