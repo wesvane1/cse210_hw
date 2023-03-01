@@ -18,7 +18,7 @@ public class Activity
     while(true)
     {
       Thread.Sleep(1500);
-      Console.WriteLine("Welcome to the Mindfulness Program\nWhat would you like to do?");
+      Console.WriteLine("\nWelcome to the Mindfulness Program\nWhat would you like to do?");
       Console.WriteLine("1: Breathing Activity\n2: Listing Activity\n3: Reflection Activity\n4: Quit");
       Console.WriteLine("Please select one of the following options: ");
       int selection = int.Parse(Console.ReadLine());
