@@ -47,7 +47,7 @@ public class Breathing : Activity
       if (seconds == 30 || seconds == 22 || seconds == 14 || seconds == 6)
       {
         Console.Clear();
-        Console.Write("Breath In...");
+        Console.Write("Breath Out...");
         for (i = 5; i > 0; i--)
         {
           Console.Write(i);
@@ -58,7 +58,7 @@ public class Breathing : Activity
       else if (seconds == 26 || seconds == 18 || seconds ==10 || seconds == 2)
       {
         Console.Clear();        
-        Console.Write("Breath Out...");
+        Console.Write("Breath In...");
         for (i = 5; i > 0; i--)
         {
           Console.Write(i);
