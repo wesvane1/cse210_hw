@@ -9,7 +9,7 @@ public class Word
   {
     _words = words;
 
-    // This returns the number of charactors in the string.
+    // This returns the number of characters in the string.
     // Console.WriteLine(words.Length);
 
 
