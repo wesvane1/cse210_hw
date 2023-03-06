@@ -24,22 +24,27 @@ public class Goal
       int selection = int.Parse(Console.ReadLine());
       if (selection == 1)
       {
+        Console.Clear();
         Console.WriteLine("Create new goal!!");
       }
       else if (selection == 2)
       {
+        Console.Clear();
         Console.WriteLine("List Goals!!");
       }
       else if (selection == 3)
       {
+        Console.Clear();
         Console.WriteLine("Save Goals!!");
       }
       else if (selection == 4)
       {
+        Console.Clear();
         Console.WriteLine("Load Goals");
       }
       else if (selection == 5)
       {
+        Console.Clear();
         Console.WriteLine("Record Event!!");
       }
 
