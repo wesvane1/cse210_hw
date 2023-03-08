@@ -43,6 +43,6 @@ class Simple : Goal
     int goalNum = int.Parse(Console.ReadLine());
     Console.WriteLine(goalNum);
     // goalList{goalNum}._timesCompleted ++;
-    return _timesCompleted;
+    return _timesCompleted ++;
   }
 }
