@@ -1,7 +1,7 @@
 class Checklist : Goal
 {
   private int _goalAmount;
-  private int _timesCompleted;
+  private int _timesCompleted = 0;
 
   public Checklist(string name, string description) : base(name, description)
   {
@@ -33,6 +33,11 @@ class Checklist : Goal
   }
   public override int recordEvent()
   {
-    throw new NotImplementedException();
+    Console.WriteLine("Which goal were you able to complete?");
+    Console.WriteLine("Goal Placeholder");
+    int goalNum = int.Parse(Console.ReadLine());
+    Console.WriteLine(goalNum);
+    // goalList{goalNum}._timesCompleted ++;
+    return _timesCompleted ++;
   }
 }
