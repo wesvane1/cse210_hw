@@ -1,13 +1,20 @@
-public class Simple : Goal
+// Remove the abstract
+class Simple : Goal
 {
-  public int newTotal;
-  private string _description;
-  public string _goalName;
+  private int _goalAmount = 1;
+  private int _timesCompleted;
 
-  public Simple(string description, string welcome) : base(welcome)
+  public bool _isComplete  = false;
+
+  public Simple(string name, string description) : base(name, description)
   {
     _description = description;
   }
+
+  // public override bool isComplete()
+  // {
+
+  // }
 
   public string testStorage()
   {
@@ -16,5 +23,26 @@ public class Simple : Goal
     Console.WriteLine("How many points?: ");
     int num = int.Parse(Console.ReadLine());
     return $"{goalName} worth {num}";
+  }
+
+  public override bool isComplete()
+  {
+    if (_timesCompleted > _goalAmount)
+    {
+      return _isComplete = true;
+    }
+    else
+    {
+      return _isComplete = false;
+    }
+  }
+  public override int recordEvent()
+  {
+    Console.WriteLine("Which goal were you able to complete?");
+    Console.WriteLine("Goal Placeholder");
+    int goalNum = int.Parse(Console.ReadLine());
+    Console.WriteLine(goalNum);
+    // goalList{goalNum}._timesCompleted ++;
+    return _timesCompleted;
   }
 }

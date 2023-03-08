@@ -1,9 +1,16 @@
-public class Eternal : Goal
+class Eternal : Goal
 {
-  private string _description;
-
-  public Eternal(string description, string welcome) : base(welcome)
+  public Eternal(string name, string description) : base(name, description)
   {
     _description = description;
+  }
+
+  public override bool isComplete()
+  {
+    return false;
+  }
+  public override int recordEvent()
+  {
+    throw new NotImplementedException();
   }
 }
