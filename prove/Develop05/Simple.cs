@@ -6,9 +6,15 @@ class Simple : Goal
 
   public bool _isComplete  = false;
 
-  public Simple(string name, string description) : base(name, description)
+
+  public Simple(string name, string description, int pointValue) : base(name, description, pointValue)
   {
     _description = description;
+  }
+
+  public override string GetGoalInfo()
+  {
+    return $"[ ] {_name} {_description} {_pointValue}";
   }
 
   // public override bool isComplete()

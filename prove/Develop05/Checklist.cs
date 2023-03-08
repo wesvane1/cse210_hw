@@ -1,23 +1,20 @@
 class Checklist : Goal
 {
   private int _goalAmount;
-  private int _timesCompleted = 0;
+  private int _timesCompleted;
 
-  public Checklist(string name, string description) : base(name, description)
+  public Checklist(string name, string description, int pointValue, int goalAmount, int timesCompleted) : base(name, description, pointValue)
   {
+    _name = name;
     _description = description;
+    _pointValue = pointValue;
+    _goalAmount = goalAmount;
+    _timesCompleted = timesCompleted;
   }
 
-  public int getGoalAmount()
+  public override string GetGoalInfo()
   {
-    Console.WriteLine("How many times would you like to do this?: ");
-    int goalAmount = int.Parse(Console.ReadLine());
-    return goalAmount;
-  }
-
-  public string getChecklistGoal()
-  {
-    return "placeholder";
+    return $"[ ] {_name} {_description} - {_timesCompleted}/{_goalAmount}";
   }
 
   public override bool isComplete()
