@@ -5,11 +5,29 @@ class Checklist : Goal
 
   public Checklist(string name, string description, int pointValue, int goalAmount, int timesCompleted) : base(name, description, pointValue)
   {
-    _name = name;
-    _description = description;
-    _pointValue = pointValue;
     _goalAmount = goalAmount;
     _timesCompleted = timesCompleted;
+  }
+
+  public override string GetGoalName()
+  {
+    Console.Write("What would you like your goal to be?: ");
+    string name = Console.ReadLine();
+    return name;
+  }
+
+  public override string GetGoalDescription()
+  {
+    Console.Write("Please provide a short description of the goal: ");
+    string description = Console.ReadLine();
+    return description;
+  }
+
+  public override int GetGoalPoints()
+  {
+    Console.Write("How many points would you like this goal to be worth?");
+    int pointValue = int.Parse(Console.ReadLine());
+    return pointValue;
   }
 
   public override string GetGoalInfo()
@@ -17,15 +35,19 @@ class Checklist : Goal
     return $"[ ] {_name} {_description} - {_timesCompleted}/{_goalAmount}";
   }
 
-  public override bool isComplete()
+  public override string isComplete()
   {
-    if (_timesCompleted > _goalAmount)
+    if (_timesCompleted == _goalAmount)
     {
-      return true;
+      return $"[x] {_name} {_description} - {_timesCompleted}/{_goalAmount}";
+    }
+    else if(_timesCompleted > _goalAmount)
+    {
+      return $"Already Completed";
     }
     else
     {
-      return false;
+      return GetGoalInfo();
     }
   }
   public override int recordEvent()
