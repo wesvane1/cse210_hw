@@ -2,14 +2,15 @@ using System;
 
 class Program
 {
+    static List<string> GoalList = new List<string>();
     static void Main(string[] args)
     {
-
+        //
         // Goal g1 = new Goal("Welcome!");
-        Simple s1 = new Simple("This activity will help you make a simple goal","Welcome to the Simple Goal Setter!");
-        Checklist c1 = new Checklist("This will help you make a checklist goal!", "Welcome to the Checklist Goal Setter");
-        Eternal e1 = new Eternal("This activity will help you make an eternal goal!", "Welcome to the Eternal Goal Setter!");
-        List<string> testList = new List<string>();
+
+        SimpleGoal s1 = new SimpleGoal("This activity will help you make a simple goal","Welcome to the SimpleGoal Goal Setter!", 0);
+        Checklist c1 = new Checklist("This will help you make a checklist goal!", "Welcome to the Checklist Goal Setter", 0, 3, 0);
+        Eternal e1 = new Eternal("This activity will help you make an eternal goal!", "Welcome to the Eternal Goal Setter!", 0);
         while (true)
         {
         Console.WriteLine("\nMenu Options");
@@ -23,7 +24,6 @@ class Program
         int selection = int.Parse(Console.ReadLine());
         if (selection == 1)
         {
-            Console.Clear();
             Console.WriteLine("1. Simple");
             Console.WriteLine("2. Eternal");
             Console.WriteLine("3. Checklist");
@@ -31,39 +31,32 @@ class Program
             int newSelection = int.Parse(Console.ReadLine());
             if (newSelection == 1)
             {
-                Console.Clear();
-                testList.Add(s1.testStorage());
-                Console.WriteLine(testList);
+                SimpleGoal newS1 = new SimpleGoal(s1.GetGoalName(), s1.GetGoalDescription(), s1.GetGoalPoints());
             }
             else if (newSelection == 2)
             {
-                Console.Clear();
-                Console.WriteLine("placeholder Eternal");
+                Eternal newE1 = new Eternal(e1.GetGoalName(), e1.GetGoalDescription(), e1.GetGoalPoints());
             }
             else if (newSelection == 3)
             {
-                Console.Clear();
                 Console.WriteLine("placeholder Checklist");
             }
         }
         else if (selection == 2)
         {
-            Console.Clear();
             Console.WriteLine("List Goals!!");
         }
         else if (selection == 3)
         {
-            Console.Clear();
             Console.WriteLine("Save Goals!!");
         }
         else if (selection == 4)
         {
-            Console.Clear();
+            
             Console.WriteLine("Load Goals");
         }
         else if (selection == 5)
         {
-            Console.Clear();
             Console.WriteLine("Record Event!!");
         }
 
