@@ -1,33 +1,36 @@
 class Checklist : Goal
 {
   private int _goalAmount;
-  private int _timesCompleted;
+  private int _timesCompleted = 0;
 
   public Checklist(string name, string description, int pointValue, int goalAmount, int timesCompleted) : base(name, description, pointValue)
   {
     _goalAmount = goalAmount;
     _timesCompleted = timesCompleted;
   }
-
   public override string GetGoalName()
   {
     Console.Write("What would you like your goal to be?: ");
     string name = Console.ReadLine();
     return name;
   }
-
   public override string GetGoalDescription()
   {
     Console.Write("Please provide a short description of the goal: ");
     string description = Console.ReadLine();
     return description;
   }
-
   public override int GetGoalPoints()
   {
     Console.Write("How many points would you like this goal to be worth?");
     int pointValue = int.Parse(Console.ReadLine());
     return pointValue;
+  }
+  public string GetGoalAmount()
+  {
+    Console.WriteLine("How many times would you like to do this goal?: ");
+    string goalAmount = Console.ReadLine();
+    return goalAmount;
   }
 
   public override string GetGoalInfo()
