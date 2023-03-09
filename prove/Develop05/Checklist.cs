@@ -22,14 +22,14 @@ class Checklist : Goal
   }
   public override int GetGoalPoints()
   {
-    Console.Write("How many points would you like this goal to be worth?");
+    Console.Write("How many points would you like this goal to be worth?: ");
     int pointValue = int.Parse(Console.ReadLine());
     return pointValue;
   }
-  public string GetGoalAmount()
+  public int GetGoalAmount()
   {
-    Console.WriteLine("How many times would you like to do this goal?: ");
-    string goalAmount = Console.ReadLine();
+    Console.Write("How many times would you like to do this goal?: ");
+    int goalAmount = int.Parse(Console.ReadLine());
     return goalAmount;
   }
 

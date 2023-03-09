@@ -28,7 +28,7 @@ class SimpleGoal : Goal
 
   public override int GetGoalPoints()
   {
-    Console.Write("How many points would you like this goal to be worth?");
+    Console.Write("How many points would you like this goal to be worth?: ");
     int pointValue = int.Parse(Console.ReadLine());
     return pointValue;
   }
