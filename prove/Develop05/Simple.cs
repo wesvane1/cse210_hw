@@ -1,5 +1,5 @@
 // Remove the abstract
-class Simple : Goal
+class SimpleGoal : Goal
 {
   private int _goalAmount = 1;
   private int _timesCompleted;
@@ -7,14 +7,35 @@ class Simple : Goal
   public bool _isComplete  = false;
 
 
-  public Simple(string name, string description, int pointValue) : base(name, description, pointValue)
+  public SimpleGoal(string name, string description, int pointValue) : base(name, description, pointValue)
   {
-    _description = description;
+
+  }
+
+  public override string GetGoalName()
+  {
+    Console.Write("What would you like your goal to be?: ");
+    string name = Console.ReadLine();
+    return name;
+  }
+
+  public override string GetGoalDescription()
+  {
+    Console.Write("Please provide a short description of the goal: ");
+    string description = Console.ReadLine();
+    return description;
+  }
+
+  public override int GetGoalPoints()
+  {
+    Console.Write("How many points would you like this goal to be worth?");
+    int pointValue = int.Parse(Console.ReadLine());
+    return pointValue;
   }
 
   public override string GetGoalInfo()
   {
-    return $"[ ] {_name} {_description} {_pointValue}";
+    return $"[ ] {_name} ({_description}) {_pointValue}";
   }
 
   // public override bool isComplete()
@@ -31,15 +52,15 @@ class Simple : Goal
     return $"{goalName} worth {num}";
   }
 
-  public override bool isComplete()
+  public override string isComplete()
   {
-    if (_timesCompleted > _goalAmount)
+    if (_timesCompleted == _goalAmount)
     {
-      return _isComplete = true;
+      return $"[X] {_name} {_description} {_pointValue}";
     }
     else
     {
-      return _isComplete = false;
+      return $"Goal already completed";
     }
   }
   public override int recordEvent()
