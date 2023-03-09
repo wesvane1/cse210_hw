@@ -21,7 +21,7 @@ class Eternal : Goal
 
   public override int GetGoalPoints()
   {
-    Console.Write("How many points would you like this goal to be worth?");
+    Console.Write("How many points would you like to be rewarded each time you complete this goal?: ");
     int pointValue = int.Parse(Console.ReadLine());
     return pointValue;
   }
