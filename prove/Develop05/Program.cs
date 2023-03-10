@@ -51,10 +51,20 @@ class Program
         else if (selection == 3)
         {
             Console.WriteLine("Save Goals!!");
+            Console.Write("What file would you like to save your goals to?: ");
+            string fileName = Console.ReadLine();
+            using (StreamWriter outputFile = new StreamWriter(fileName))
+            {
+                // You can add text to the file with the WriteLine method
+                outputFile.WriteLine("This will be the first line in the file.");
+                
+                // You can use the $ and include variables just like with Console.WriteLine
+                string color = "Blue";
+                outputFile.WriteLine($"My favorite color is {color}");
+            }
         }
         else if (selection == 4)
         {
-            
             Console.WriteLine("Load Goals");
         }
         else if (selection == 5)
