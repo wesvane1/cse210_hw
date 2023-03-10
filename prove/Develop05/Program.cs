@@ -32,20 +32,28 @@ class Program
             if (newSelection == 1)
             {
                 SimpleGoal newS1 = new SimpleGoal(s1.GetGoalName(), s1.GetGoalDescription(), s1.GetGoalPoints());
+                Console.WriteLine(newS1.GetGoalInfo());
+                GoalList.Add(newS1.GetGoalInfo());
             }
             else if (newSelection == 2)
             {
                 Eternal newE1 = new Eternal(e1.GetGoalName(), e1.GetGoalDescription(), e1.GetGoalPoints());
                 Console.WriteLine(newE1.GetGoalInfo());
+                GoalList.Add(newE1.GetGoalInfo());
             }
             else if (newSelection == 3)
             {
                 Checklist newC1 = new Checklist(c1.GetGoalName(), c1.GetGoalDescription(), c1.GetGoalPoints(), c1.GetGoalAmount(), 0);
                 Console.WriteLine(newC1.GetGoalInfo());
+                GoalList.Add(newC1.GetGoalInfo());
             }
         }
         else if (selection == 2)
         {
+            foreach (string goal in GoalList)
+            {
+                Console.WriteLine(goal);
+            }
             Console.WriteLine("List Goals!!");
         }
         else if (selection == 3)
@@ -53,19 +61,32 @@ class Program
             Console.WriteLine("Save Goals!!");
             Console.Write("What file would you like to save your goals to?: ");
             string fileName = Console.ReadLine();
-            using (StreamWriter outputFile = new StreamWriter(fileName))
-            {
+            // using (StreamWriter outputFile = new StreamWriter(fileName))
+            // {
+            //     foreach(string goal in GoalList)
+            //     {
+            //         outputFile.WriteLine(GoalList);
+            //     }
+            // }
+                // This code deletes everything in the file and rewrites it
+
                 // You can add text to the file with the WriteLine method
-                outputFile.WriteLine("This will be the first line in the file.");
+                // outputFile.WriteLine("This will be the Second line in the file.");
                 
                 // You can use the $ and include variables just like with Console.WriteLine
-                string color = "Blue";
-                outputFile.WriteLine($"My favorite color is {color}");
-            }
+                // string color = "Red";
+                // outputFile.WriteLine($"My favorite color is {color}");
         }
         else if (selection == 4)
         {
             Console.WriteLine("Load Goals");
+            Console.WriteLine("What file would you like to load goals from?: ");
+            string fileName = Console.ReadLine();
+            string[] lines = System.IO.File.ReadAllLines(fileName);
+            foreach (string line in GoalList)
+            {
+                string[] parts = line.Split(",");
+            }
         }
         else if (selection == 5)
         {
