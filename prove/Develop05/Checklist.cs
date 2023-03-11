@@ -2,11 +2,15 @@ class Checklist : Goal
 {
   private int _goalAmount;
   private int _timesCompleted = 0;
+  private int _bonusPoint;
+  public bool _isComplete = false;
 
-  public Checklist(string name, string description, int pointValue, int goalAmount, int timesCompleted) : base(name, description, pointValue)
+  public Checklist(string name, string description, int pointValue, int bonusPoint, int goalAmount, int timesCompleted, bool isComplete) : base(name, description, pointValue)
   {
     _goalAmount = goalAmount;
     _timesCompleted = timesCompleted;
+    _bonusPoint = bonusPoint;
+    this._isComplete = isComplete;
   }
   public override string GetGoalName()
   {
@@ -26,6 +30,12 @@ class Checklist : Goal
     int pointValue = int.Parse(Console.ReadLine());
     return pointValue;
   }
+  public int GetBonusPoints()
+  {
+    Console.Write("How many bonus points would you like for fully completing the goal?: ");
+    int bonusPoint = int.Parse(Console.ReadLine());
+    return bonusPoint;
+  }
   public int GetGoalAmount()
   {
     Console.Write("How many times would you like to do this goal?: ");
@@ -35,14 +45,26 @@ class Checklist : Goal
 
   public override string GetGoalInfo()
   {
-    return $"[ ] {_name} {_description} - {_timesCompleted}/{_goalAmount}";
+    return $"[ ] {_name} ({_description}) - {_timesCompleted}/{_goalAmount}";
+  }
+
+  public override void completeGoal()
+  {
+    if (_timesCompleted == _goalAmount)
+    {
+      _isComplete = true;
+    }
+    else
+    {
+      _isComplete = false;
+    }
   }
 
   public override string isComplete()
   {
     if (_timesCompleted == _goalAmount)
     {
-      return $"[x] {_name} {_description} - {_timesCompleted}/{_goalAmount}";
+      return $"[x] {_name} ({_description}) - {_timesCompleted}/{_goalAmount}";
     }
     else if(_timesCompleted > _goalAmount)
     {
@@ -61,5 +83,9 @@ class Checklist : Goal
     Console.WriteLine(goalNum);
     // goalList{goalNum}._timesCompleted ++;
     return _timesCompleted ++;
+  }
+  public override string organizeGoal()
+  {
+    return $"Checklist:{_name},{_description},{_pointValue},{_bonusPoint},{_timesCompleted},{_goalAmount},{_isComplete}";
   }
 }

@@ -28,7 +28,7 @@ class Eternal : Goal
 
   public override string GetGoalInfo()
   {
-    return $"{_name} {_description} {_pointValue}";
+    return $"{_name}, ({_description})";
   }
 
   public override string isComplete()
@@ -38,5 +38,9 @@ class Eternal : Goal
   public override int recordEvent()
   {
     throw new NotImplementedException();
+  }
+    public override string organizeGoal()
+  {
+    return $"Eternal:{_name},{_description},{_pointValue}";
   }
 }

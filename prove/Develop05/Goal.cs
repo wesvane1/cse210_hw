@@ -15,6 +15,11 @@ abstract class Goal
   public abstract string GetGoalDescription();
   public abstract int GetGoalPoints();
   public abstract string isComplete();
+  public virtual void completeGoal() {
+
+  }
   public abstract int recordEvent();
   public abstract string GetGoalInfo();
+
+  public abstract string organizeGoal();
 }
