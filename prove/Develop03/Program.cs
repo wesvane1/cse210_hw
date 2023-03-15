@@ -16,19 +16,22 @@ class Program
       // allWords.randomWord();
 
       string scrip = "this is a test";
-
-      Console.Write("Press any key to enter, or type quit to end the program:\n");
-      string entry = Console.ReadLine();
-      if(entry == "")
+      while(true)
       {
-        Console.Clear();
-        Console.WriteLine(scrip);
-        Console.WriteLine($"{ref1.getRef1()} {words.randomWord(words.getWords())}");
-      }
-      else
-      {
-        Console.Clear();
-        Console.WriteLine("This is the end of the line buck-o");
+        Console.Write("Press any key to enter, or type quit to end the program:\n");
+        string entry = Console.ReadLine();
+        if(entry == "")
+        {
+          Console.Clear();
+          Console.WriteLine(scrip);
+          Console.WriteLine($"{ref1.getRef1()} {words.randomWord(words.getWords())}");
+        }
+        else
+        {
+          Console.Clear();
+          Console.WriteLine("This is the end of the line buck-o");
+          while(false);
+        }
       }
     }
 

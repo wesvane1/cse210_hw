@@ -4,10 +4,13 @@ public class Word
 {
   // List<string> Words = new List<string>();
   private string _words;
+  List<string> Words = new List<string>();
+
   // private string _words;
   public Word(string words)
   {
     _words = words;
+    Words = !string.IsNullOrEmpty(words) ? words.Split(' ').ToList() : new List<string>();
 
     // This returns the number of characters in the string.
     // Console.WriteLine(words.Length);
@@ -39,11 +42,10 @@ public class Word
   }
   public string randomWord(string words){
     _words = words;
-    List<string> Words = !string.IsNullOrEmpty(words) ? words.Split(' ').ToList() : new List<string>();
     Random test = new Random();
     int testRand = test.Next(Words.Count);
     string testWord = Words[testRand];
-
+    
     string dashed = "";
     for (int charNum = 0; charNum < testWord.Length; charNum++)
       {
