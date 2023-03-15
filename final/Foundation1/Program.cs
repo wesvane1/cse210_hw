@@ -41,13 +41,13 @@ class Program
         v2.Display();
 
         Comment c7 = new Comment();
-        c7._commentName="Savanna";
+        c7._commentName="Danica";
         c7._commentText="I use the same algorithm!";
         Comment c8 = new Comment();
-        c8._commentName="Nic";
+        c8._commentName="Pedro";
         c8._commentText="Great Content";
         Comment c9 = new Comment();
-        c9._commentName="Paloma";
+        c9._commentName="Kevin";
         c9._commentText="Glad there are no parodies on this puzzle";
         Video v3 = new Video();
         v3._videoTitle = "Solving a 3x3 Rubik's cube";
