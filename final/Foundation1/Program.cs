@@ -18,6 +18,7 @@ class Program
         Video v1 = new Video();
         v1._videoTitle = "Minecraft Create";
         v1._videoAuthor = "Sky";
+        v1._videoLength = 1320;
         v1._comment1.Add(c1);
         v1._comment1.Add(c2);
         v1._comment1.Add(c3);
@@ -35,6 +36,7 @@ class Program
         Video v2 = new Video();
         v2._videoTitle = "Fly me to the moon cover";
         v2._videoAuthor = "Post";
+        v1._videoLength = 620;
         v2._comment2.Add(c4);
         v2._comment2.Add(c5);
         v2._comment2.Add(c6);
@@ -52,10 +54,10 @@ class Program
         Video v3 = new Video();
         v3._videoTitle = "Solving a 3x3 Rubik's cube";
         v3._videoAuthor = "Wes";
+        v1._videoLength = 1980;
         v3._comment3.Add(c7);
         v3._comment3.Add(c8);
         v3._comment3.Add(c9);
         v3.Display();
-        
     }
 }
