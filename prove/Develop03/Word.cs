@@ -11,32 +11,7 @@ public class Word
   {
     _words = words;
     Words = !string.IsNullOrEmpty(words) ? words.Split(' ').ToList() : new List<string>();
-
-    // This returns the number of characters in the string.
-    // Console.WriteLine(words.Length);
-
-
-    // for (int i=0; i < words.Length-1; i++){
-    //   string[] splitter = words.Split(" ");
-    //   Words.Add(splitter[i]);
-    // }
-    // Console.WriteLine(Words);
-    // Random randomNum = new Random();
-    // int randomNumber = randomNum.Next(0,46);
-    // string randomWord = Words[randomNumber];
-    // Console.WriteLine(Words[randomNumber]);
-
-
   }
-  // public List<string> wordList(string words){
-  //   _words = words;
-  //   for (int i=0; i < words.Length; i++){
-  //     string[] splitter = words.Split(" ");
-  //     Words.Add(splitter[i]);
-  //   }
-  //   return Words;
-  // }
-
   public string getWords(){
     return _words;
   }
@@ -58,11 +33,4 @@ public class Word
     Console.WriteLine("{0}", string.Join(" ", Words));
     return ($"{Words}");
   }
-  // public string randomWord(string words){
-  //   _words = words;
-  //   Random test = new Random();
-  //   int testRandom = test.Next(words.Count);
-  //   string testWord = words[testRandom];
-  //   return testWord;
-  // }
 }

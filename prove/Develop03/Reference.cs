@@ -11,8 +11,6 @@ public class Reference
     _chapter = chapter;
     _startVerse = startVerse;
     _endVerse = endVerse;
-    // The line below writes the reference to the consol.
-    // Console.WriteLine($"{_book} {_chapter}:{_startVerse}-{endVerse}");
   }
   public Reference(string book, int chapter, int startVerse)
   {
@@ -20,8 +18,6 @@ public class Reference
     _chapter = chapter;
     _startVerse = startVerse;
     _endVerse = -1;
-    // The line below writes the reference to the consol.
-    // Console.WriteLine($"{_book} {_chapter}:{_startVerse}-{endVerse}");
   }
 
   public string getRef1()

@@ -12,8 +12,6 @@ class Program
       Reference ref1 = new Reference("Moses", 1, 38, 39);
       Word words = new Word("And as one earth shall pass away, and the heavens thereof even so shall another come; and there is no end to my works, neither to my words. For behold, this is my work and my glory—to bring to pass the immortality and eternal life of man.");
       Scripture scrip1 = new Scripture(ref1, words);
-      // This calls a function from another class.
-      // allWords.randomWord();
 
       string scrip = "this is a test";
       while(true)
@@ -34,8 +32,4 @@ class Program
         }
       }
     }
-
-    // Set a value equal to zero.
-    // Set a bool value to be false for each word in the scripture.
-    // The bool becomes true when it has iterated through each word in the scripture.
 }
