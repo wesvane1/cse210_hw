@@ -26,10 +26,9 @@ public class Address
     }
   }
 
-  public string GetA1()
+  public string GetAddress()
   {
-    Console.WriteLine($"{_streetAddress} {_city}, {_state}, {_zipCode}, {_country}");
-    return $"{_streetAddress} {_city}, {_state}, {_zipCode}, {_country}";
+    return $"{_streetAddress} \n{_city}, {_state} \n{_zipCode}, {_country}";
   }
 
   // public string SetFullAddress()
