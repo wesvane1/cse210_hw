@@ -2,20 +2,15 @@ public class Order
 {
   // ! Make a list in the main class like this static List<Order> orderList = new List<Order>();
 
-  private string _itemOrdered;
-  private int _quantity;
-  private int _totalCost;
+  static List<String> orderList = new List<String>();
 
-  public Order(string itemOrdered, int quantity, int totalCost)
+  public Order()
   {
-    _itemOrdered = itemOrdered;
-    _quantity = quantity;
-    _totalCost = totalCost;
   }
 
   public string getOrder()
   {
-    Console.WriteLine("What would you like to get?: ");
+    Console.WriteLine("What would you like to get? (Meat, Cheese, Sauce, Bread): ");
     string CustRequest = Console.ReadLine();
     return CustRequest;
   }

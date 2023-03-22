@@ -8,4 +8,9 @@ public class Customer
     _customerFName = customerFName;
     _customerLName = customerLName;
   }
+
+  public string getCustomerName()
+  {
+    return $"{_customerFName}, {_customerLName}";
+  }
 }
