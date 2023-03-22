@@ -14,9 +14,7 @@ class Program
         // ! There is a bool set to check if the address is in the USA, this will be useful for the added shipping cost
 
         Order o1 = new Order();
-
         Product p1 = new Product();
-
         Address a1 = new Address("455 South 2nd East APT 701", "Rexburg", "Idaho", 83440, "USA");
         Customer c1 = new Customer("Wes", "Vane");
         // Console.WriteLine(a1.GetAddress());
@@ -39,7 +37,6 @@ class Program
             itemsPrice.Add(itemPrice);
             i++;
         }
-
         // This block of code returns the product_id
         int idI = 0;
         foreach (string order in orderList)
@@ -48,7 +45,6 @@ class Program
             items.Add(itemId);
             idI++;
         }
-
         // This block of code will return the items that are repeated for the packing label.
         for (int j = 0; j < items.Count; j++)
         {
@@ -67,15 +63,13 @@ class Program
         {
             Console.WriteLine("{0}: {1}", pair.Key, pair.Value);
         }
-
         // This block of code adds all prices together
         foreach (int number in itemsPrice)
         {
             testPrice+=number;
         }
-
         // This block of code adds a shipping cost to the order
-        if (a1.IsInUSA()==true)
+        if (a1.IsInUSA()==true || a2.IsInUSA() == true)
         {
             testPrice+=5;
         }
