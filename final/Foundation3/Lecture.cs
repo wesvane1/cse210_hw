@@ -11,7 +11,7 @@ public class Lecture : Event
 
   public string GetStandardDetails()
   {
-    return "This needs to get a event title, event description, date, time, and address";
+    return $"{_eventTitle}, {_eventDescription}, {_eventDate}, {_eventTime}, {_eventAddress}";
   }
   public string GetFullDetails()
   {
