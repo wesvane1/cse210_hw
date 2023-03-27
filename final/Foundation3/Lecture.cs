@@ -11,11 +11,11 @@ public class Lecture : Event
 
   public string GetStandardDetails()
   {
-    return $"{_eventTitle}, {_eventDescription}, {_eventDate}, {_eventTime}, {_eventAddress}";
+    return $"{_eventTitle}, {_eventDescription}, \nWhere {_eventDate}, {_eventTime}, \nWhere{_eventAddress}";
   }
   public string GetFullDetails()
   {
-    return "This needs to get standard details AND Speaker name + capacity";
+    return $"{GetStandardDetails()}, \nWho{_speakerName}, \nCapacity: {_lectureCapacity}";
   }
   public string GetShortDescription()
   {

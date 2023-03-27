@@ -9,7 +9,7 @@ public class Outdoor : Event
 
   public string GetStandardDetails()
   {
-    return $"{_eventTitle}, {_eventDescription}, {_eventDate}, {_eventTime}, {_eventAddress}";
+    return $"{_eventTitle}, {_eventDescription}, \nWhere {_eventDate}, {_eventTime}, \nWhere{_eventAddress}";
   }
   public string GetFullDetails()
   {
