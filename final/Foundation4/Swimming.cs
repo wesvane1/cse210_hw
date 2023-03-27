@@ -7,6 +7,11 @@ class Swimming : Exercise
     throw new NotImplementedException();
   }
 
+  public override int GetDistance()
+  {
+    throw new NotImplementedException();
+  }
+
   public override int GetSpeed()
   {
     throw new NotImplementedException();

@@ -11,7 +11,8 @@ abstract class Exercise
   //  * Speed = (distance/duration)*60
   //  * Pace = duration/distance
 
-  public abstract int GetSpeed();
   public abstract int GetPace();
+  public abstract int GetDistance();
+  public abstract int GetSpeed();
   public abstract string GetSummary();
 }
