@@ -2,23 +2,27 @@ using System;
 
 class Cycling : Exercise
 {
-  public override int GetPace()
+  public Cycling(string date, string activityName, int duration, double distance) : base(date, activityName, duration, distance)
+  {}
+  public override double GetPace()
   {
-    throw new NotImplementedException();
+    double pace = Math.Round((_duration/_distance),2);
+    return pace;
   }
 
-  public override int GetDistance()
+  public override double GetDistance()
   {
-    throw new NotImplementedException();
+    return _distance;
   }
 
-  public override int GetSpeed()
+  public override double GetSpeed()
   {
-    throw new NotImplementedException();
+    double speed = Math.Round((_distance/_duration)*60,2);
+    return speed;
   }
 
   public override string GetSummary()
   {
-    throw new NotImplementedException();
+    return $"{_date} ({_duration} min)- Distance {_distance} miles, Speed: {GetSpeed()} mph, Pace: {GetPace()} min mile";
   }
 }
