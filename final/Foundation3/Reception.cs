@@ -2,21 +2,21 @@ public class Reception : Event
 {
   private string _email;
 
-  public Reception(string email, string eventTitle, string eventDescription, string eventDate, string eventTime, string eventAddress)
+  public Reception(string eventType, string email, string eventTitle, string eventDescription, string eventDate, string eventTime, string eventAddress):base(eventType, eventTitle, eventDescription, eventDate, eventTime, eventAddress)
   {
     _email = email;
   }
 
   public string GetStandardDetails()
   {
-    return $"{_eventTitle}, {_eventDescription}, \nWhere {_eventDate}, {_eventTime}, \nWhere{_eventAddress}";
+    return $"\n{_eventTitle}, {_eventDescription}, \nWhen {_eventDate}, {_eventTime}, \nWhere {_eventAddress}";
   }
   public string GetFullDetails()
   {
-    return "This needs to get standard details AND RSVP Email";
+    return $"{GetStandardDetails()}, RSVP Email: {_email}";
   }
   public string GetShortDescription()
   {
-    return "This needs to get the event type, title, and date";
+    return $"\n{_eventType}: {_eventTitle}, \nWhen {_eventDate}";
   }
 }
