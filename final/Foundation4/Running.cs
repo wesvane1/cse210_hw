@@ -7,7 +7,7 @@ class Running : Exercise
   {}
   public override double GetPace()
   {
-    double pace = Math.Round((_duration/_distance),2);
+    double pace = Math.Round((GetDistance()/_distance),2);
     return pace;
   }
 
@@ -18,12 +18,12 @@ class Running : Exercise
 
   public override double GetSpeed()
   {
-    double speed = Math.Round((_distance/_duration)*60,2);
+    double speed = Math.Round((GetDistance()/_duration)*60,2);
     return speed;
   }
 
   public override string GetSummary()
   {
-    return $"{_date} ({_duration} min)- Distance {_distance} miles, Speed: {GetSpeed()} mph, Pace: {GetPace()} min mile";
+    return $"{_date} ({_duration} min)- Distance {GetDistance()} miles, Speed: {GetSpeed()} mph, Pace: {GetPace()} min mile";
   }
 }

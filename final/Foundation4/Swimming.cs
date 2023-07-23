@@ -24,6 +24,6 @@ class Swimming : Exercise
 
   public override string GetSummary()
   {
-    return $"{_date} ({_duration} min)- Distance {GetDistance()} miles ({_distance} laps), Speed: {GetSpeed()} mph, Pace: {GetPace()} min per lap";
+    return $"{_date} ({_duration} min)- Distance {GetDistance()} miles ({GetDistance()} laps), Speed: {GetSpeed()} mph, Pace: {GetPace()} min per lap";
   }
 }
